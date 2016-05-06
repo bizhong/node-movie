@@ -1,0 +1,297 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, main, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a{
+    text-decoration: none;
+}
+::-webkit-input-placeholder{
+    color: #fff;
+}
+:-moz-placeholder{
+   color: #fff;
+   opacity: 1;
+}
+::-moz-placeholder{
+   color: #fff;
+   opacity: 1;
+}
+:-ms-input-placeholder{
+   color: #fff;
+}
+body{
+    font: 14px/1 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: #212121;
+    background: #f2f2f2;
+    outline: 0;
+    -webkit-appearance: none;
+}
+.header{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 56px;
+    background: #4285f4;
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+}
+.white{
+    background: #fff;
+}
+#btn-nav,.logo,#btn-back,.search,.btn-sign{
+    position: absolute;
+    top: 10px;
+    height: 36px;
+}
+#btn-nav{
+    display: block;
+    left: 24px;
+    width: 24px;
+    height: 24px;
+    margin-top: 6px;
+    background: url(/images/ic_menu_white_24px.svg);
+}
+.logo{
+    left: 80px;
+    font-size: 21px;
+    line-height: 36px;
+    color: #fff;
+}
+#btn-back{
+    display: none;
+    top: 16px;
+    left: 24px;
+    height: 24px;
+    padding-left: 56px;
+    font-size: 21px;
+    line-height: 24px;
+    color: #212121;
+    background: url(/images/ic_arrow_back_black_24px.svg) no-repeat;
+}
+.search{
+    left: 50%;
+    width: 900px;
+    margin-left: -450px;
+    background: rgba(255,255,255,.15);
+    border-radius: 2px;
+}
+.search,.btn-sign a,.nav a{
+    transition: background .3s cubic-bezier(.4,0,.2,1);
+}
+.search:hover{
+    background: rgba(255,255,255,.25);
+}
+.search form{
+    height: 100%;
+    font-size: 0;
+}
+.search input{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+    background: none;
+    border: none;
+    outline: 0;
+}
+input.search-input{
+    width: 828px;
+    width: calc(100% - 72px);
+    padding-left: 36px;
+    color: #212121;
+}
+.search:before{
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    display: inline-block;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: url(/images/ic_search_black_24px.svg) no-repeat;
+    opacity: .6;
+}
+input.search-submit{
+    display: none;
+    width: 72px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+input.search-submit,.sign h1,.sign input[type="reset"],.sign input[type="submit"]{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+input.search-submit:hover,.sign input[type="reset"]:hover,.sign input[type="submit"]:hover{
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.26);
+}
+input.search-input:focus + input.search-submit{
+    display: inline-block;
+    background: #4285f4;
+}
+.btn-sign{
+    right: 24px;
+}
+.btn-sign a{
+    display: inline-block;
+    padding: 0 16px;
+    line-height: 36px;
+    color: #fff;
+    border-radius: 2px;
+}
+.btn-sign-up,.sign-out{
+    background: rgba(255,255,255,.15);
+}
+.btn-sign a:hover{
+    background: rgba(255,255,255,.25);
+}
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: visible;
+    overflow-y: auto;
+    z-index: 999;
+    width: 240px;
+    background: #fafafa;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    transform: translateX(-250px);
+    transition: transform .3s cubic-bezier(.4,0,.2,1);
+}
+.menu-show{
+    transform: translateX(0);
+}
+.title{
+    height: 160px;
+    padding-left: 40px;
+    font-size: 24px;
+    line-height: 264px;
+    color: #fff;
+    background: #4285f4;
+}
+.nav{
+    padding-top: 16px;
+}
+.nav a{
+    display: block;
+    padding: 16px 40px;
+    line-height: 24px;
+    color: #757575;
+}
+.nav a:hover{
+    background: #e0e0e0;
+}
+.sign{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: 400px;
+    height: 400px;
+    margin: -200px 0 0 -200px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 14px rgba(0,0,0,.24),0 14px 28px rgba(0,0,0,.48);
+    display: none;
+}
+.sign h1{
+    font-size: 34px;
+    padding: 63px 0;
+    text-align: center;
+    color: #fff;
+    background: #4285f4;
+}
+.sign-content{
+    padding: 0 16px;
+}
+.sign input::-webkit-input-placeholder{
+    color: #757575;
+}
+.sign input:-moz-placeholder{
+   color: #757575;
+   opacity: 1;
+}
+.sign input::-moz-placeholder{
+   color: #757575;
+   opacity: 1;
+}
+.sign input:-ms-input-placeholder{
+   color: #757575;
+}
+.sign input{
+    margin-top: 16px;
+    color: #212121;
+    border: 1px solid #d9d9d9;
+}
+.sign input[type="text"],.sign input[type="password"]{
+    width: 100%;
+    height: 36px;
+    text-indent: 16px;
+}
+.sign input[type="reset"],.sign input[type="submit"]{
+    padding: 0;
+    width: 174px;
+    height: 36px;
+    border: none;
+    cursor: pointer;
+}
+.sign input[type="submit"]{
+    margin-left: 16px;
+    color: #fff;
+    background: #4285f4;
+}
+#mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    transition: background .3s cubic-bezier(.4,0,.2,1);
+}
+.mask-show{
+    visibility: visible;
+    background: rgba(0,0,0,.5);
+}
+.mask-hide{
+    visibility: hidden;
+    background: transparent;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <title>{{ title }}</title>
+        <meta name="keywords" content="电影">
+        <meta name="description" content="电影">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+        <meta name="author" content="兰必钟（Basfed Lan）, http://www.basfed.com">
+        <meta name="robots" content="index,follow">
+        <link rel="shortcut icon" href="/images/favicon.ico">
+        <link rel="canonical" href="http://localhost:3000/">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header class="header" id="header">
+            <a id="btn-nav" href="javascript:void(0);"></a>
+            <h1 class="logo">电影</h1>
+            <a id="btn-back" href="javascript:void(0);">返回</a>
+            <div class="search" id="search">
+                <form action="" method="GET">
+                    <input class="search-input" id="search-input" type="search" placeholder="搜索">
+                    <input class="search-submit" type="submit" >
+                </form>
+            </div>
+            <div class="btn-sign">
+                {% if user %}
+                <a class="username" href="/user">{{ user.username }}</a>
+                <a class="sign-out" href="/user/signout">登出</a>
+                {% else %}
+                <a class="btn-sign-in" id="btn-sign-in" href="javascript:void(0);">登录</a>
+                <a class="btn-sign-up" id="btn-sign-up" href="javascript:void(0);">注册</a>
+                {% endif %}
+            </div>
+        </header>
+        <div class="menu" id="menu">
+            <h1 class="title">电影</h1>
+            <nav class="nav">
+                <a class="nav-link" href="">喜剧</a>
+                <a class="nav-link" href="">恐怖</a>
+                <a class="nav-link" href="">爱情</a>
+                <a class="nav-link" href="">动作</a>
+                <a class="nav-link" href="">科幻</a>
+                <a class="nav-link" href="">武侠</a>
+                <a class="nav-link" href="">战争</a>
+                <a class="nav-link" href="">犯罪</a>
+                <a class="nav-link" href="">惊悚</a>
+                <a class="nav-link" href="">剧情</a>
+            </nav>
+        </div>
+        {% block content %}
+        {% endblock %}
+        {% if !user %}
+        <aside class="sign" id="sign-in">
+            <h1>登录</h1>
+            <div class="sign-content">
+                <form action="/user/signin" method="POST">
+                    <input name="user[username]" type="text" placeholder="用户名" autofocus>
+                    <input name="user[password]" type="password" placeholder="密码">
+                    <input name="save" type="checkbox" value="yes" checked>
+                    <label>记住登录状态</label><br/>
+                    <input name="reset"type="reset" value="重置">
+                    <input name="login" type="submit" value="登录">
+                </form>
+            </div>
+        </aside>
+        <aside class="sign" id="sign-up">
+            <h1>注册</h1>
+            <div class="sign-content">
+                <form action="/user/signup" method="POST">
+                    <input name="user[username]" type="text" placeholder="用户名" autofocus>
+                    <input name="user[password]" type="password" placeholder="密码">
+                    <input name="save" type="checkbox" value="yes" checked>
+                    <label>记住登录状态</label><br/>
+                    <input name="reset" type="reset" value="重置">
+                    <input name="login" type="submit" value="注册">
+                </form>
+            </div>
+        </aside>
+        {% endif %}
+        <script src="/js/main.js"></script>
+    </body>
+</html>

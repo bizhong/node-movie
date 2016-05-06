@@ -1,0 +1,39 @@
+{
+  "name": "movie",
+  "version": "1.0.0",
+  "description": "Movie is a Web application using Node.js and MongoDB.",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.15.0",
+    "connect-mongo": "^1.1.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "fs": "^0.0.2",
+    "moment": "^2.13.0",
+    "mongoose": "^4.4.14",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7",
+    "serve-static": "^1.10.2",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizhongbio/node-movie.git"
+  },
+  "keywords": [
+    "Node.js",
+    "MongoDB"
+  ],
+  "author": "Basfed Lan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bizhongbio/node-movie/issues"
+  },
+  "homepage": "https://github.com/bizhongbio/node-movie#readme"
+}
