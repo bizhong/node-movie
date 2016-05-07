@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 var SALT_WORK_FACTOR = 10;
 
-// 创建用户模式
+// 定义用户模式
 var UserSchema = new mongoose.Schema({
     username: {
         unique: true,
@@ -58,7 +58,7 @@ UserSchema.statics = {
     fetch: function(cb) {// 取出目前数据库中所有的数据
         return this.find({}).sort('meta.updateAt').exec(cb);
     },
-    findById: function(id, cb) {
+    findById: function(id, cb) {// 查询单条数据
         return this.findOne({_id: id}).exec(cb);
     }
 };

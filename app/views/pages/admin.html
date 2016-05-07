@@ -1,0 +1,25 @@
+{% extends '../layouts/common.html' %}
+        {% block content %}
+        <main class="main">
+            <section class="movie-post">
+                <div class="movie-content">
+                    <form action="/admin/movie" method="POST">
+                        <input name="movie[_id]" type="text" placeholder="豆瓣 Movie API ID" autofocus>
+                        <input name="movie[title]" type="text" value="movie.title" placeholder="电影中文名">
+                        <input name="movie[original_title]" type="text" value="movie.original_title" placeholder="电影原名">
+                        <input name="movie[category]" type="text" value="movie.category" placeholder="电影分类">
+                        <input name="movie[director]" type="text" value="movie.director" placeholder="电影导演">
+                        <input name="movie[website]" type="text" value="movie.website" placeholder="电影官方网站">
+                        <input name="movie[year]" type="text" value="movie.year" placeholder="电影年代">
+                        <input name="movie[language]" type="text" value="movie.language" placeholder="电影语言">
+                        <input name="movie[durations]" type="text" value="movie.durations" placeholder="电影片长">
+                        <input name="movie[country]" type="text" value="movie.country" placeholder="电影制片国家">
+                        <input name="movie[summary]" type="text" value="movie.summary" placeholder="电影简介">
+                        <input name="movie[poster]" type="text" value="movie.poster" placeholder="电影海报">
+                        <input name="movie[flash_url]" type="text" value="movie.flash_url" placeholder="电影播放URL">
+                        <input type="submit" value="发布">
+                    </form>
+                </div>
+            </section>
+        </main>
+        {% endblock %}

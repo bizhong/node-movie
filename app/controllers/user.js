@@ -64,3 +64,21 @@ exports.signout = function(req, res) {
     delete req.session.user;
     res.redirect('/');
 };
+
+// 用户是否登录
+exports.signedIn = function(req, res, next) {
+    var user = req.session.user;
+    if (!user) {
+        return res.redirect('/');
+    }
+    next();
+};
+
+// 用户登录后判断是否是管理员
+exports.adminSignedIn = function(req, res, next) {
+    var user = req.session.user;
+    if (user.role < 3) {
+        return res.redirect('/');
+    }
+    next();
+};
