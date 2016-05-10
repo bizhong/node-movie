@@ -3,14 +3,14 @@
         <main class="main">
             <section class="movie-post">
                 <div class="movie-content">
-                    <form action="/admin/movie" method="POST">
+                    <form action="/admin/movie/save" method="POST">
                         <input id="douban-movie-id" type="text" placeholder="豆瓣 Movie API ID" autofocus>
                         <input id="movie-title" name="movie[title]" type="text" value="{{ movie.title }}" placeholder="电影中文名">
                         <input id="movie-aka" name="movie[aka]" type="text" value="{{ movie.aka }}" placeholder="电影又名">
                         <input id="movie-poster" name="movie[poster]" type="text" value="{{ movie.poster }}" placeholder="电影海报">
                         <label>海报上传：</label>
                         <label><input name="uploadposter" type="file"></label>
-                        <input id="movie-flashurl" name="movie[flash_url]" type="text" value="{{ movie.flash_url }}" placeholder="电影播放URL">
+                        <input id="movie-flashurl" name="movie[flash_url]" type="text" value="{{ movie.flash_url }}" placeholder="电影预告片播放URL">
                         <input id="movie-categories" name="movie[categories]" type="text" value="{{ movie.categories }}" placeholder="电影分类">
                         <label>分类选择：</label>
                         <label><input name="movie[category]" type="radio" value="{{  }}"></label>

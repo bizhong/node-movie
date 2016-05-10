@@ -4,6 +4,10 @@ var Movie = require('../controllers/movie.js');
 var Category = require('../controllers/category.js');
 var Comment = require('../controllers/comment.js');
 
+// 加载文件上传中间件
+var multipart = require('connect-multiparty');
+var multipartMiddleware = multipart();
+
 module.exports = function(app) {
     app.use(function(req, res, next) {
         var _user = req.session.user;
@@ -14,10 +18,17 @@ module.exports = function(app) {
     app.get('/', Index.index);
 
     // 用户
-    app.post('/user/signin', User.signin);// 登录页面
-    app.post('/user/signup', User.signup);// 注册页面
-    app.get('/user/signout', User.signout);// 登出页面
+    app.post('/user/signin', User.signin);// 登录
+    app.post('/user/signup', User.signup);// 注册
+    app.get('/user/signout', User.signout);// 登出
+
+    // 详情电影页
+    app.get('/movie/:id', Movie.detail);
 
     // 管理员
-    app.get('/admin/movie/post', User.signedIn, User.adminSignedIn, Movie.post);// 发布电影页面
+    app.get('/admin/movie/post', User.signedIn, User.adminSignedIn, Movie.post);// 发布电影预告片
+    app.post('/admin/movie/save', multipartMiddleware, User.signedIn, User.adminSignedIn, Movie.save);// 保存电影预告片
+    app.get('/admin/movie/update/:id', User.signedIn, User.adminSignedIn, Movie.update);// 更改电影预告片
+    app.get('/admin/movie/list', User.signedIn, User.adminSignedIn, Movie.list);// 电影预告片列表
+    app.delete('/admin/movie/list', User.signedIn, User.adminSignedIn, Movie.delete);// 删除电影预告片
 };
