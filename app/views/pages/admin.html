@@ -8,12 +8,15 @@
                         <input id="movie-title" name="movie[title]" type="text" value="{{ movie.title }}" placeholder="电影中文名">
                         <input id="movie-aka" name="movie[aka]" type="text" value="{{ movie.aka }}" placeholder="电影又名">
                         <input id="movie-poster" name="movie[poster]" type="text" value="{{ movie.poster }}" placeholder="电影海报">
-                        <label>海报上传：</label>
-                        <label><input name="uploadposter" type="file"></label>
+                        <label>海报上传：<input name="uploadposter" type="file"></label>
                         <input id="movie-flashurl" name="movie[flash_url]" type="text" value="{{ movie.flash_url }}" placeholder="电影预告片播放URL">
-                        <input id="movie-categories" name="movie[categories]" type="text" value="{{ movie.categories }}" placeholder="电影分类">
-                        <label>分类选择：</label>
-                        <label><input name="movie[category]" type="radio" value="{{  }}"></label>
+                        <label>电影分类：
+                        {% for category in categories -%}
+                            <input name="movie[category]" type="radio" value="{{ category._id }}">{{ category.name }}
+                        {%- endfor %}
+                        </label>
+                        <label>推荐选择电影分类：<span id="genres"></span></label>
+                        <input id="movie-category" name="movie[category]" type="text" placeholder="电影分类中没有，在这里添加电影分类">
                         <input id="movie-directors" name="movie[directors]" type="text" value="{{ movie.directors }}" placeholder="电影导演">
                         <input id="movie-casts" name="movie[casts]" type="text" value="{{ movie.casts }}" placeholder="电影主演">
                         <input id="movie-year" name="movie[year]" type="text" value="{{ movie.year }}" placeholder="电影年代">

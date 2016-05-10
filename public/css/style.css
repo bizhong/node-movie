@@ -194,9 +194,6 @@ input.search-input:focus + input.search-submit{
     display: inline-block;
     background: #4285f4;
 }
-#movie-flashurl{
-    border: 1px solid #ff0000;
-}
 .btn-sign{
     right: 24px;
 }
@@ -282,6 +279,20 @@ input.search-input:focus + input.search-submit{
     border-radius: 2px;
     cursor: pointer;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .21);
+}
+#movie-flashurl,#movie-category{
+    border: 1px solid #ff0000;
+}
+.movie-post label{
+    display: block;
+    margin-bottom: 16px;
+    color: #ff0000;
+}
+.movie-post label input{
+    margin-bottom: 0;
+}
+#genres{
+    color: #4285f4;
 }
 .sign{
     position: fixed;

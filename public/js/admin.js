@@ -30,7 +30,7 @@ var body = document.body || document.getElementsByTagName('body')[0],
     movieTitle = getId("movie-title"),
     movieAka = getId("movie-aka"),
     moviePoster = getId("movie-poster"),
-    movieCategories = getId("movie-categories"),
+    genres = getId("genres"),
     movieDirectors = getId("movie-directors"),
     movieCasts = getId("movie-casts"),
     movieYear = getId("movie-year"),
@@ -56,7 +56,7 @@ function jsonpCallback(movie) {
     movieTitle.value = movie.title;
     movieAka.value = arrayForEach(movie.aka);
     moviePoster.value = movie.images.large;
-    movieCategories.value = arrayForEach(movie.genres);
+    genres.innerHTML = arrayForEach(movie.genres);
     movieDirectors.value = arrayForEach(movie.directors, "name");
     movieCasts.value = arrayForEach(movie.casts, "name");
     movieYear.value = movie.year;
