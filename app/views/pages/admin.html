@@ -4,26 +4,25 @@
             <section class="movie-post">
                 <div class="movie-content">
                     <form action="/admin/movie" method="POST">
-                        <input id="douban" type="text" placeholder="豆瓣 Movie API ID" autofocus>
-                        <input name="movie[title]" type="text" value="{{ movie.title }}" placeholder="电影中文名">
-                        <input name="movie[original_title]" type="text" value="{{ movie.original_title }}" placeholder="电影原名">
-                        <input name="movie[categoryname]" type="text" value="{{ movie.category }}" placeholder="电影分类">
-                        <label>分类选择：</label>
-                        <label><input name="movie[category]" type="radio" value="{{  }}"></label>
-                        <input name="movie[director]" type="text" value="{{ movie.director }}" placeholder="电影导演">
-                        <input name="movie[website]" type="text" value="{{ movie.website }}" placeholder="电影官方网站">
-                        <input name="movie[year]" type="text" value="{{ movie.year }}" placeholder="电影年代">
-                        <input name="movie[language]" type="text" value="{{ movie.language }}" placeholder="电影语言">
-                        <input name="movie[durations]" type="text" value="{{ movie.durations }}" placeholder="电影片长">
-                        <input name="movie[country]" type="text" value="{{ movie.country }}" placeholder="电影制片国家">
-                        <input name="movie[summary]" type="text" value="{{ movie.summary }}" placeholder="电影简介">
-                        <input name="movie[poster]" type="text" value="{{ movie.poster }}" placeholder="电影海报">
+                        <input id="douban-movie-id" type="text" placeholder="豆瓣 Movie API ID" autofocus>
+                        <input id="movie-title" name="movie[title]" type="text" value="{{ movie.title }}" placeholder="电影中文名">
+                        <input id="movie-aka" name="movie[aka]" type="text" value="{{ movie.aka }}" placeholder="电影又名">
+                        <input id="movie-poster" name="movie[poster]" type="text" value="{{ movie.poster }}" placeholder="电影海报">
                         <label>海报上传：</label>
                         <label><input name="uploadposter" type="file"></label>
-                        <input name="movie[flash_url]" type="text" value="{{ movie.flash_url }}" placeholder="电影播放URL">
+                        <input id="movie-flashurl" name="movie[flash_url]" type="text" value="{{ movie.flash_url }}" placeholder="电影播放URL">
+                        <input id="movie-categories" name="movie[categories]" type="text" value="{{ movie.categories }}" placeholder="电影分类">
+                        <label>分类选择：</label>
+                        <label><input name="movie[category]" type="radio" value="{{  }}"></label>
+                        <input id="movie-directors" name="movie[directors]" type="text" value="{{ movie.directors }}" placeholder="电影导演">
+                        <input id="movie-casts" name="movie[casts]" type="text" value="{{ movie.casts }}" placeholder="电影主演">
+                        <input id="movie-year" name="movie[year]" type="text" value="{{ movie.year }}" placeholder="电影年代">
+                        <input id="movie-countries" name="movie[countries]" type="text" value="{{ movie.countries }}" placeholder="制片国家/地区">
+                        <input id="movie-summary" name="movie[summary]" type="text" value="{{ movie.summary }}" placeholder="电影简介">
                         <input type="submit" value="发布">
                     </form>
                 </div>
             </section>
         </main>
+        <script src="/js/admin.js"></script>
         {% endblock %}

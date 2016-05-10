@@ -8,6 +8,7 @@ function addEvent(element, type, fn) {
         element["on" + type] = fn;
     }
 }
+
 // 跨浏览器的移除事件处理程序
 function removeEvent(element, type, fn) {
     if (element.removeEventListener) {
@@ -19,14 +20,13 @@ function removeEvent(element, type, fn) {
     }
 }
 
+// 返回对拥有指定 ID 的第一个对象的引用
+function getId(element) {
+    return document.getElementById(element);
+}
+
 // 主函数
 function handler() {
-    
-    // 返回对拥有指定 ID 的第一个对象的引用
-    function getId(element) {
-        return document.getElementById(element);
-    }
-
     var body = document.body || document.getElementsByTagName('body')[0],
         header = getId("header"),
         signIn = getId("sign-in"),

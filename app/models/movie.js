@@ -7,19 +7,17 @@ var ObjectId = mongoose.Schema.Types.ObjectId;
 // 定义电影模式
 var MovieSchema = new mongoose.Schema({
     title: String,
-    original_title: String,
+    aka: String,
+    poster: String,
     category: {
         type: ObjectId,
         ref: 'Category'
     },
-    director: String,
-    website: String,
+    directors: String,
+    casts: String,
     year: Number,
-    language: String,
-    durations: String,
-    country: String,
+    countries: String,
     summary: String,
-    poster: String,
     flash_url: String,
     clicks: {
         type: Number,

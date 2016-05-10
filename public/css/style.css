@@ -194,6 +194,9 @@ input.search-input:focus + input.search-submit{
     display: inline-block;
     background: #4285f4;
 }
+#movie-flashurl{
+    border: 1px solid #ff0000;
+}
 .btn-sign{
     right: 24px;
 }
