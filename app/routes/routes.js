@@ -27,7 +27,7 @@ module.exports = function(app) {
 
     // 管理员
     app.get('/admin/movie/post', User.signedIn, User.adminSignedIn, Movie.post);// 发布电影
-    app.post('/admin/movie/save', multipartMiddleware, User.signedIn, User.adminSignedIn, Movie.save);// 保存电影
+    app.post('/admin/movie/save', multipartMiddleware, User.signedIn, User.adminSignedIn, Movie.savePoster, Movie.save);// 保存电影
     app.get('/admin/movie/update/:id', User.signedIn, User.adminSignedIn, Movie.update);// 更改电影
     app.get('/admin/movie/list', User.signedIn, User.adminSignedIn, Movie.list);// 电影列表
     app.delete('/admin/movie/list', User.signedIn, User.adminSignedIn, Movie.delete);// 删除电影

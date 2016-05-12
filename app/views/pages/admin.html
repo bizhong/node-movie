@@ -16,7 +16,7 @@
                         {%- endfor %}
                         </label>
                         <label>推荐选择电影分类：<span id="genres"></span></label>
-                        <input id="movie-category" name="movie[category]" type="text" placeholder="电影分类中没有，在这里添加电影分类">
+                        <input id="movie-category" name="movie[category_name]" type="text" placeholder="电影分类中没有，在这里添加电影分类">
                         <input id="movie-directors" name="movie[directors]" type="text" value="{{ movie.directors }}" placeholder="电影导演">
                         <input id="movie-casts" name="movie[casts]" type="text" value="{{ movie.casts }}" placeholder="电影主演">
                         <input id="movie-year" name="movie[year]" type="text" value="{{ movie.year }}" placeholder="电影年代">
