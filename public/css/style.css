@@ -76,7 +76,11 @@ body{
 .white{
     background: #fff;
 }
-#btn-nav,.logo,#btn-back,.search,.btn-sign{
+#btn-nav,
+.logo,
+#btn-back,
+.search,
+.btn-sign{
     position: absolute;
     top: 10px;
     height: 36px;
@@ -113,7 +117,9 @@ body{
     background: rgba(255,255,255,.15);
     border-radius: 2px;
 }
-.search,.btn-sign a,.nav a{
+.search,
+.btn-sign a,
+.nav a{
     transition: background .3s cubic-bezier(.4,0,.2,1);
 }
 .search:hover{
@@ -184,10 +190,20 @@ input[type="search"]:focus::-moz-placeholder{
 input[type="search"]:focus:-ms-input-placeholder{
    color: #757575;
 }
-input.search-submit,.sign h1,.sign input[type="reset"],.sign input[type="submit"]{
+input.search-submit,
+.sign h1,
+.sign input[type="reset"],
+.sign input[type="submit"],
+.movie-player,
+.movie-infro,
+.movie-comments{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
-input.search-submit:hover,.movie-post input[type="submit"]:hover,.sign input[type="reset"]:hover,.sign input[type="submit"]:hover{
+input.search-submit:hover,
+.movie-post input[type="submit"]:hover,
+.sign input[type="reset"]:hover,
+.sign input[type="submit"]:hover,
+.movie-comments input:hover{
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.26);
 }
 input.search-input:focus + input.search-submit{
@@ -204,7 +220,8 @@ input.search-input:focus + input.search-submit{
     color: #fff;
     border-radius: 2px;
 }
-.btn-sign-up,.sign-out{
+.btn-sign-up,
+.sign-out{
     background: rgba(255,255,255,.15);
 }
 .btn-sign a:hover{
@@ -280,7 +297,8 @@ input.search-input:focus + input.search-submit{
     cursor: pointer;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .21);
 }
-#movie-flashurl,#movie-category{
+#movie-flashurl,
+#movie-category{
     border: 1px solid #ff0000;
 }
 .movie-post label{
@@ -301,6 +319,7 @@ input.search-input:focus + input.search-submit{
     float: left;
     width: 854px;
     height: 480px;
+    background: #fff;
 }
 .movie-infro{
     overflow-y: auto;
@@ -310,7 +329,8 @@ input.search-input:focus + input.search-submit{
     margin-left: 24px;
     background: #fff;
 }
-.infro-content{
+.infro-content,
+.comments-content{
     padding: 16px;
 }
 .infro-content h1{
@@ -326,9 +346,30 @@ input.search-input:focus + input.search-submit{
 .movie-comments{
     float: left;
     width: 854px;
+    margin: 16px 0;
     background: #fff;
 }
-.content:before,.content:after{
+.movie-comments form{
+    border-bottom: 1px solid #d9d9d9;
+}
+.movie-comments textarea{
+    width: 816px;
+    height: 120px;
+    margin-bottom: 16px;
+    border: 1px solid #d9d9d9;
+}
+.movie-comments input{
+    width: 72px;
+    height: 36px;
+    margin-bottom: 16px;
+    color: #fff;
+    background: #4285f4;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.content:before,
+.content:after{
     display: table;
     content: "";
 }
@@ -364,12 +405,14 @@ input.search-input:focus + input.search-submit{
     color: #212121;
     border: 1px solid #d9d9d9;
 }
-.sign input[type="text"],.sign input[type="password"]{
+.sign input[type="text"],
+.sign input[type="password"]{
     width: 100%;
     height: 36px;
     text-indent: 16px;
 }
-.sign input[type="reset"],.sign input[type="submit"]{
+.sign input[type="reset"],
+.sign input[type="submit"]{
     padding: 0;
     width: 174px;
     height: 36px;

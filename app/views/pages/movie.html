@@ -19,9 +19,20 @@
                         </div>
                     </aside>
                     <div class="movie-comments">
-                        <form action="/user/comment" method="POST">
-                            <textarea></textarea>
-                        </form>
+                        <div class="comments-content">
+                            <form action="/user/comment" method="POST">
+                                <textarea name="comment[content]"></textarea>
+                                <input name="comment[movie]" type="hidden" value="{{ movie._id }}">
+                                {% if user %}
+                                <input name="comment[from]" type="hidden" value="{{ user._id }}">
+                                <input type="submit" value="评论">
+                                {% else %}
+                                <p>点击右上角<span>登录</span>或者<span>注册</span></p>
+                                {% endif %}
+                            </form>
+                            <ul class="comments-list">
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
