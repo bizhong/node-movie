@@ -294,6 +294,48 @@ input.search-input:focus + input.search-submit{
 #genres{
     color: #4285f4;
 }
+.content{
+    margin: 0 24px;
+}
+.movie-player{
+    float: left;
+    width: 854px;
+    height: 480px;
+}
+.movie-infro{
+    overflow-y: auto;
+    float: left;
+    width: 423px;
+    height: 480px;
+    margin-left: 24px;
+    background: #fff;
+}
+.infro-content{
+    padding: 16px;
+}
+.infro-content h1{
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+.infro-content p{
+    line-height: 24px;
+}
+.infro-content p span{
+    color: #4285f4;
+}
+.movie-comments{
+    float: left;
+    width: 854px;
+    background: #fff;
+}
+.content:before,.content:after{
+    display: table;
+    content: "";
+}
+.content:after{
+    clear: both;
+    overflow: hidden;
+}
 .sign{
     position: fixed;
     top: 50%;

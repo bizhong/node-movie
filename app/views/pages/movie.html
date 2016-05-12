@@ -1,0 +1,29 @@
+{% extends '../layouts/common.html' %}
+        {% block content %}
+        <main class="main">
+            <section class="movie">
+                <div class="content">
+                    <div class="movie-player">
+                        <iframe width="854" height="480" src="{{ movie.flash_url }}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <aside class="movie-infro">
+                        <div class="infro-content">
+                            <h1>{{ movie.title }}</h1>
+                            <p><span>电影又名</span>：{{ movie.aka }}</p>
+                            <p><span>电影分类</span>：<a href="">{{ movie.category }}</a></p>
+                            <p><span>电影导演</span>：{{ movie.directors }}</p>
+                            <p><span>电影主演</span>：{{ movie.casts }}</p>
+                            <p><span>电影年代</span>：{{ movie.year }}</p>
+                            <p><span>制片国家/地区</span>：{{ movie.countries }}</p>
+                            <p><span>电影简介</span>：{{ movie.summary }}</p>
+                        </div>
+                    </aside>
+                    <div class="movie-comments">
+                        <form action="/user/comment" method="POST">
+                            <textarea></textarea>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        {% endblock %}

@@ -5,14 +5,21 @@
                 <div class="movie-content">
                     <form action="/admin/movie/save" method="POST">
                         <input id="douban-movie-id" type="text" placeholder="豆瓣 Movie API ID" autofocus>
+                        {% if movie._id %}
+                        <input type="hidden" name="movie[_id]" value="{{ movie._id }}">
+                        {% endif %}
                         <input id="movie-title" name="movie[title]" type="text" value="{{ movie.title }}" placeholder="电影中文名">
                         <input id="movie-aka" name="movie[aka]" type="text" value="{{ movie.aka }}" placeholder="电影又名">
                         <input id="movie-poster" name="movie[poster]" type="text" value="{{ movie.poster }}" placeholder="电影海报">
                         <label>海报上传：<input name="uploadposter" type="file"></label>
                         <input id="movie-flashurl" name="movie[flash_url]" type="text" value="{{ movie.flash_url }}" placeholder="电影预告片播放URL">
                         <label>电影分类：
-                        {% for category in categories -%}
-                            <input name="movie[category]" type="radio" value="{{ category._id }}">{{ category.name }}
+                        {% for cat in categories -%}
+                            {% if movie._id %}
+                            <input name="movie[category]" type="radio" value="{{ cat._id }}" checked="{{ cat._id.toString() == movie.category.toString() }}">{{ cat.name }}
+                            {% else %}
+                            <input name="movie[category]" type="radio" value="{{ cat._id }}">{{ cat.name }}
+                            {% endif %}
                         {%- endfor %}
                         </label>
                         <label>推荐选择电影分类：<span id="genres"></span></label>

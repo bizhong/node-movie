@@ -3,9 +3,27 @@ var Movie = require('../models/movie.js');
 var Category = require('../models/category.js');
 var Comment = require('../models/comment.js');
 
+var _ = require('underscore');
+var fs = require('fs');
+var path = require('path');
+
 // 详情电影页
 exports.detail = function(req, res) {
-    // body...
+    var id = req.params.id;
+    Movie.update({_id: id}, {$inc: {clicks: 1}}, function(err) {
+        if (err) {
+            console.log(err);
+        }
+    });
+    Movie.findById(id, function(err, movie) {
+        Comment.find({movie: id}).populate('from', 'name').populate('reply.from reply.to', 'name').exec(function(err, comments) {
+            res.render('movie', {
+                title: movie.title + ' - 电影',
+                movie: movie,
+                comments: comments
+            });
+        });
+    });
 };
 
 // 发布电影
@@ -42,53 +60,104 @@ exports.savePoster = function(req, res, next) {
 
 // 保存电影
 exports.save = function(req, res) {
+    var id = req.body.movie._id;
     var movieObj = req.body.movie;
     var _movie;
     if (req.poster) {
         movieObj.poster = req.poster;
     }
-    _movie = new Movie(movieObj);
-    var categoryId = movieObj.category;
-    var categoryName = movieObj.category_name;
-    _movie.save(function(err, movie) {
-        if (err) {
-            console.log(err);
-        }
-        if (categoryId) {
-            Category.findById(categoryId, function(err, category) {
-                category.movies.push(movie._id);
+    if (id) {
+        Movie.findById(id, function(err, movie) {
+            if (err) {
+                console.log(err);
+            }
+            _movie = _.extend(movie, movieObj);
+            _movie.save(function(err, movie) {
+                if (err) {
+                    console.log(err);
+                }
+                var categoryId = movie.category;
+                Category.findById(categoryId, function(err, category) {
+                    category.movies.push(movie._id);
+                    category.save(function(err, category) {
+                        res.redirect('/');
+                    });
+                });
+            });
+        });
+    } else {
+        _movie = new Movie(movieObj);
+        var categoryId = movieObj.category;
+        var categoryName = movieObj.category_name;
+        _movie.save(function(err, movie) {
+            if (err) {
+                console.log(err);
+            }
+            if (categoryId) {
+                Category.findById(categoryId, function(err, category) {
+                    category.movies.push(movie._id);
+                    category.save(function(err, category) {
+                        res.redirect('/');
+                    });
+                });
+            } else if (categoryName) {
+                var category = new Category({
+                    name: categoryName,
+                    movies: [movie._id]
+                });
                 category.save(function(err, category) {
-                    res.redirect('/');
+                    movie.category = category._id;
+                    movie.save(function(err, movie) {
+                        res.redirect('/');
+                    });
                 });
-            });
-        } else if (categoryName) {
-            var category = new Category({
-                name: categoryName,
-                movies: [movie._id]
-            });
-            category.save(function(err, category) {
-                movie.category = category._id;
-                movie.save(function(err, movie) {
-                    res.redirect('/');
-                });
-            });
-        }
-    });
-
+            }
+        });
+    }
 };
 
 // 更改电影
 
 exports.update = function(req, res) {
-    // body...
+    var id = req.params.id;
+    if (id) {
+        Movie.findById(id, function(err, movie) {
+            Category.find({}, function(err, categories) {
+                res.render('admin', {
+                    title: '电影更新',
+                    movie: movie,
+                    categories: categories
+                });
+            });
+        });
+    }
 };
 
 // 电影列表
 exports.list = function(req, res) {
-    // body...
+    Movie.fetch(function(err, movies) {
+        if (err) {
+            console.log(err);
+        }
+        res.render('list', {
+            title: '电影列表',
+            movies: movies
+        });
+    });
 };
 
 // 删除电影
 exports.delete = function(req, res) {
-    // body...
+    var id = req.query.id;
+    if (id) {
+        Movie.remove({_id: id}, function(err, movie) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.json({
+                    success: 1
+                });
+            }
+        });
+    }
 };
