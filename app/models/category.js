@@ -1,11 +1,11 @@
 // 加载模块
 // 加载 mongoose 模块
 var mongoose = require('mongoose');
-
-var ObjectId = mongoose.Schema.Types.ObjectId;
+var Schema = mongoose.Schema;
+var ObjectId = Schema.Types.ObjectId;
 
 // 定义电影分类模式
-var CategorySchema = new mongoose.Schema({
+var CategorySchema = new Schema({
     name: String,
     movies: [{type: ObjectId, ref: 'Movie'}],
     meta: {

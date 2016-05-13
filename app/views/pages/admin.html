@@ -11,7 +11,7 @@
                         <input id="movie-title" name="movie[title]" type="text" value="{{ movie.title }}" placeholder="电影中文名">
                         <input id="movie-aka" name="movie[aka]" type="text" value="{{ movie.aka }}" placeholder="电影又名">
                         <input id="movie-poster" name="movie[poster]" type="text" value="{{ movie.poster }}" placeholder="电影海报">
-                        <label>海报上传：<input name="uploadposter" type="file"></label>
+                        <label>海报上传：<input name="upload_poster" type="file"></label>
                         <input id="movie-flashurl" name="movie[flash_url]" type="text" value="{{ movie.flash_url }}" placeholder="电影预告片播放URL">
                         <label>电影分类：
                         {% for cat in categories -%}

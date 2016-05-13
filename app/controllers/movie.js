@@ -39,23 +39,25 @@ exports.post = function(req, res) {
 
 // 保存本地上传的电影海报
 exports.savePoster = function(req, res, next) {
-    var posterData = req.files.uploadposter;
-    var filePath = posterData.path;
-    var originalFilename = posterData.originalFilename;
-    if (originalFilename) {
-        fs.readFile(filePath, function(err, data) {
-            var timestamp = Date.now();
-            var type = posterData.type.split('/')[1];
-            var poster = timestamp + '.' + type;
-            var newPath = path.join(__dirname, '../../', '/public/upload/' + poster);
-            fs.writeFile(newPath, data, function(err) {
-                req.poster = poster;
-                next();
-            });
-        });
-    } else {
-        next();
-    }
+    // var posterData = req.files.upload_poster;
+    // var filePath = posterData.path;
+    // var originalFilename = posterData.originalFilename;
+
+    // if (originalFilename) {
+    //     fs.readFile(filePath, function(err, data) {
+    //         var timestamp = Date.now();
+    //         var type = posterData.type.split('/')[1];
+    //         var poster = timestamp + '.' + type;
+    //         var newPath = path.join(__dirname, '../../', '/public/upload/' + poster);
+    //         fs.writeFile(newPath, data, function(err) {
+    //             req.poster = poster;
+    //             next();
+    //         });
+    //     });
+    // } else {
+    //     next();
+    // }
+    next();
 };
 
 // 保存电影
@@ -116,15 +118,14 @@ exports.save = function(req, res) {
     }
 };
 
-// 更改电影
-
+// 修改电影
 exports.update = function(req, res) {
     var id = req.params.id;
     if (id) {
         Movie.findById(id, function(err, movie) {
             Category.find({}, function(err, categories) {
                 res.render('admin', {
-                    title: '电影更新',
+                    title: '修改电影',
                     movie: movie,
                     categories: categories
                 });
@@ -139,7 +140,7 @@ exports.list = function(req, res) {
         if (err) {
             console.log(err);
         }
-        res.render('list', {
+        res.render('movie-list', {
             title: '电影列表',
             movies: movies
         });

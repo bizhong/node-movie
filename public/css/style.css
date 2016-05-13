@@ -196,7 +196,8 @@ input.search-submit,
 .sign input[type="submit"],
 .movie-player,
 .movie-infro,
-.movie-comments{
+.movie-comments,
+.movie-list table{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
 input.search-submit:hover,
@@ -376,6 +377,27 @@ input.search-input:focus + input.search-submit{
 .content:after{
     clear: both;
     overflow: hidden;
+}
+.movie-list table{
+    width: 100%;
+    background: #fff;
+}
+.movie-list table tr{
+    height: 36px;
+    border: 1px solid #d9d9d9;
+}
+.movie-list table tr th,
+.movie-list table tr td{
+    width: 20%;
+    line-height: 36px;
+    text-align: center;
+}
+.movie-list table tr th.do,
+.movie-list table tr td.do{
+    width: 6.6666%;
+}
+.do a{
+    color: #4285f4;
 }
 .sign{
     position: fixed;

@@ -1,11 +1,11 @@
 // 加载模块
 // 加载 mongoose 模块
 var mongoose = require('mongoose');
-
-var ObjectId = mongoose.Schema.Types.ObjectId;
+var Schema = mongoose.Schema;
+var ObjectId = Schema.Types.ObjectId;
 
 // 定义电影模式
-var MovieSchema = new mongoose.Schema({
+var MovieSchema = new Schema({
     title: String,
     aka: String,
     poster: String,
