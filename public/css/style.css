@@ -399,6 +399,16 @@ input.search-input:focus + input.search-submit{
 .do a{
     color: #4285f4;
 }
+.comments-list{
+    margin-bottom: 16px;
+}
+.comments-list li{
+    line-height: 36px;
+    border-bottom: 1px solid #d9d9d9;
+}
+.comments-list li span{
+    color: #666;
+}
 .sign{
     position: fixed;
     top: 50%;

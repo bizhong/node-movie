@@ -10,21 +10,7 @@ var CommentSchema = new Schema({
         type: ObjectId,
         ref: 'Movie'
     },
-    from: {
-        type: ObjectId,
-        ref: 'User'
-    },
-    reply: [{
-        from: {
-            type: ObjectId,
-            ref: 'User'
-        },
-        to: {
-            type: ObjectId,
-            ref: 'User'
-        },
-        content: String
-    }],
+    from: String,
     content: String,
     meta: {
         createAt: {

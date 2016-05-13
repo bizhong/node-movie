@@ -6,7 +6,7 @@
                     <form action="/admin/movie/save" method="POST">
                         <input id="douban-movie-id" type="text" placeholder="豆瓣 Movie API ID" autofocus>
                         {% if movie._id %}
-                        <input type="hidden" name="movie[_id]" value="{{ movie._id }}">
+                        <input type="hidden" name="movie[_id]" value="{{ movie._id.toString() }}">
                         {% endif %}
                         <input id="movie-title" name="movie[title]" type="text" value="{{ movie.title }}" placeholder="电影中文名">
                         <input id="movie-aka" name="movie[aka]" type="text" value="{{ movie.aka }}" placeholder="电影又名">

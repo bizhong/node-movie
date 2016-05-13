@@ -21,7 +21,7 @@
                             <td>{{ movie.countries }}</td>
                             <td class="do"><a href="/movie/{{ movie._id.toString() }}" target="_blank">查看</a></td>
                             <td class="do"><a href="/admin/movie/update/{{ movie._id.toString() }}" target="_blank">修改</a></td>
-                            <td class="do"><a href="javascript:void(0);" data-id="{{ movie._id.toString() }}">删除</a></td>
+                            <td class="do"><a href="/admin/movie/delete/{{ movie._id.toString() }}">删除</a></td>
                         </tr>
                         {%- endfor %}
                     </table>

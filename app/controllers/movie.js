@@ -16,7 +16,7 @@ exports.detail = function(req, res) {
         }
     });
     Movie.findById(id, function(err, movie) {
-        Comment.find({movie: id}).populate('from', 'name').populate('reply.from reply.to', 'name').exec(function(err, comments) {
+        Comment.find({movie: id}, function(err, comments) {
             res.render('movie', {
                 title: movie.title + ' - 电影',
                 movie: movie,
@@ -149,7 +149,8 @@ exports.list = function(req, res) {
 
 // 删除电影
 exports.delete = function(req, res) {
-    var id = req.query.id;
+    var id = req.params.id;
+    console.log(id);
     if (id) {
         Movie.remove({_id: id}, function(err, movie) {
             if (err) {
@@ -159,6 +160,7 @@ exports.delete = function(req, res) {
                     success: 1
                 });
             }
+            res.redirect('/admin/movie/list');
         });
     }
 };
