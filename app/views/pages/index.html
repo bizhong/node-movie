@@ -1,4 +1,17 @@
 {% extends '../layouts/common.html' %}
         {% block content %}
-        <main class="main"></main>
+        <main class="main">
+            <section class="movies">
+                <div class="movies-content">
+                {% for movie in movies -%}
+                    <article class="movie">
+                        <a href="/movie/{{ movie._id.toString() }}"">
+                            <img src="{{ movie.poster }}" alt="{{ movie.title }}">
+                            <h2>{{ movie.title }}</h2>
+                        </a>
+                    </article>
+                {%- endfor %}
+                </div>
+            </section>
+        </main>
         {% endblock %}

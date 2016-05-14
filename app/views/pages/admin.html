@@ -16,9 +16,9 @@
                         <label>电影分类：
                         {% for cat in categories -%}
                             {% if movie._id %}
-                            <input name="movie[category]" type="radio" value="{{ cat._id }}" checked="{{ cat._id.toString() == movie.category.toString() }}">{{ cat.name }}
+                            <input name="movie[category]" type="radio" value="{{ cat._id.toString() }}" checked="{{ cat._id.toString() == movie.category.toString() }}">{{ cat.name }}
                             {% else %}
-                            <input name="movie[category]" type="radio" value="{{ cat._id }}">{{ cat.name }}
+                            <input name="movie[category]" type="radio" value="{{ cat._id.toString() }}">{{ cat.name }}
                             {% endif %}
                         {%- endfor %}
                         </label>
