@@ -30,7 +30,10 @@ function handler() {
     var body = document.body || document.getElementsByTagName('body')[0],
         header = getId("header"),
         signIn = getId("sign-in"),
-        signUp = getId("sign-up");
+        signUp = getId("sign-up"),
+        boolSoH = false,
+        localNav = getId("local-nav"),
+        btnLocalNav = getId('btn-local-nav');
 
     // 头部点击处理函数，事件委托
     function headerClick(event) {
@@ -107,7 +110,13 @@ function handler() {
         addEvent(mask, "click", maskClick);
     }
 
+    function localNavClick() {
+        boolSoH = boolSoH ? false : true;
+        localNav.style.display = boolSoH ? "block" : "none";
+    }
+
     addEvent(header, "click", headerClick);
+    addEvent(btnLocalNav, "click", localNavClick);
 }
 
 // 添加 DOMContentLoaded 事件，页面文档完全加载并解析完毕后触发

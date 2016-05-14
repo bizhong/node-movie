@@ -51,6 +51,15 @@
         </div>
         {% block content %}
         {% endblock %}
+        {% if user.grade > 2 %}
+        <div class="local">
+            <nav class="local-nav" id="local-nav">
+                <a href="/admin/movie/post">发布电影</a>
+                <a href="/admin/movie/list">电影列表</a>
+            </nav>
+            <a class="btn-local-nav" id="btn-local-nav" href="javascript:void(0);">+</a>
+        </div>
+        {% endif %}
         {% if !user %}
         <aside class="sign" id="sign-in">
             <h1>登录</h1>

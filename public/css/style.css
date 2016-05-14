@@ -409,6 +409,40 @@ input.search-input:focus + input.search-submit{
 .comments-list li span{
     color: #666;
 }
+.local{
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 56px;
+}
+.local-nav{
+    display: none;
+    width: 56px;
+    height: 72px;
+}
+.local-nav a{
+    display: block;
+    line-height: 36px;
+    color: #4285f4;
+}
+.local-nav a:hover{
+    color: #d23f31;
+}
+.btn-local-nav{
+    display: block;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    line-height: 56px;
+    text-align: center;
+    color: #fff;
+    background: #d23f31;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+.btn-local-nav:hover{
+    box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+}
 .sign{
     position: fixed;
     top: 50%;
