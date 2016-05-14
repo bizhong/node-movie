@@ -300,7 +300,8 @@ input.search-submit:hover,
     background: #fff;
     border-radius: 2px;
 }
-.movie:hover{
+.movie:hover,
+.local-nav a{
     box-shadow: 0 2px 5px rgba(0,0,0,.26);
 }
 .movie a{
@@ -309,7 +310,8 @@ input.search-submit:hover,
 }
 .movie img{
     width: 100%;
-    min-height: 277.234px;
+    height: 277.234px;
+    background: #f2f2f2;
 }
 .movie h2{
     font-size: 16px;
@@ -463,15 +465,17 @@ input.search-submit:hover,
 .local-nav{
     display: none;
     width: 56px;
-    height: 72px;
+    height: 64px;
 }
 .local-nav a{
     display: block;
-    line-height: 36px;
-    color: #4285f4;
-}
-.local-nav a:hover{
-    color: #d23f31;
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+    background: #4285f4;
+    border-radius: 2px;
 }
 .btn-local-nav{
     display: block;

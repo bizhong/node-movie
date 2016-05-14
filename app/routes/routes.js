@@ -16,6 +16,7 @@ module.exports = function(app) {
         app.locals.user = _user;// 用户信息放到环境变量中
         next();
     });
+
     // 首页
     app.get('/', Index.index);
 
@@ -23,7 +24,7 @@ module.exports = function(app) {
     app.get('/movie/:id', Movie.detail);
 
     // 分类目录
-    // app.get('category', Category.index);
+    app.get('/category/:id', Category.index);
 
     // 搜索
     app.get('/search', Search.search);

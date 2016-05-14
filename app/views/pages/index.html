@@ -5,6 +5,9 @@
                 <div class="movies-content">
                 {% if page %}
                 <header class="headline">
+                    {% if page == 'category' %}
+                    <h2>分类目录 <span>{{ category }}</span> 下有 <span>{{ total }}</span> 部电影。</h2>
+                    {% endif %}
                     {% if page == 'search' %}
                     <h2>共搜索到与 <span>{{ keyword }}</span> 相关的电影有 <span>{{ total }}</span> 个结果。</h2>
                     {% endif %}

@@ -3,15 +3,15 @@ var Movie = require('../models/movie.js');
 
 // 搜索
 exports.search = function(req, res) {
-    var search = req.query.search;
-    Movie.find({title: new RegExp(search + '.*', 'i')}, function(err, movies) {
+    var keyword = req.query.search;
+    Movie.find({title: new RegExp(keyword + '.*', 'i')}, function(err, movies) {
         if (err) {
             console.log(err);
         }
-        res.render('index',{
+        res.render('index', {
             title: '电影搜索结果',
             page: 'search',
-            keyword: search,
+            keyword: keyword,
             movies: movies,
             total: movies.length
         });

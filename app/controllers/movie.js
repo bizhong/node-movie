@@ -29,7 +29,7 @@ exports.detail = function(req, res) {
 // 发布电影
 exports.post = function(req, res) {
     Category.find({}, function(err, categories) {
-        res.render('admin',{
+        res.render('admin', {
             title: '发布电影',
             categories: categories,
             movie: {}
@@ -142,7 +142,7 @@ exports.list = function(req, res) {
         }
         res.render('movie-list', {
             title: '电影列表',
-            movies: movies
+            movies: movies.reverse()
         });
     });
 };

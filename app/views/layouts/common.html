@@ -37,16 +37,9 @@
         <div class="menu" id="menu">
             <h1 class="title">电影</h1>
             <nav class="nav">
-                <a class="nav-link" href="">喜剧</a>
-                <a class="nav-link" href="">恐怖</a>
-                <a class="nav-link" href="">爱情</a>
-                <a class="nav-link" href="">动作</a>
-                <a class="nav-link" href="">科幻</a>
-                <a class="nav-link" href="">武侠</a>
-                <a class="nav-link" href="">战争</a>
-                <a class="nav-link" href="">犯罪</a>
-                <a class="nav-link" href="">惊悚</a>
-                <a class="nav-link" href="">剧情</a>
+                {% for catlist in catlists -%}
+                <a class="nav-link" href="/category/{{ catlist._id.toString() }}">{{ catlist.name }}</a>
+                {%- endfor %}
             </nav>
         </div>
         {% block content %}
