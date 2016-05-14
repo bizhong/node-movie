@@ -97,6 +97,8 @@ body{
     left: 80px;
     font-size: 21px;
     line-height: 36px;
+}
+.logo a{
     color: #fff;
 }
 #btn-back{
@@ -159,6 +161,7 @@ input.search-input{
 input.search-submit{
     display: none;
     width: 72px;
+    background: #4285f4;
     border-radius: 2px;
     cursor: pointer;
 }
@@ -206,10 +209,6 @@ input.search-submit:hover,
 .sign input[type="submit"]:hover,
 .movie-comments input:hover{
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.26);
-}
-input.search-input:focus + input.search-submit{
-    display: inline-block;
-    background: #4285f4;
 }
 .btn-sign{
     right: 24px;
@@ -281,13 +280,25 @@ input.search-input:focus + input.search-submit{
     overflow: hidden;
 }
 .movies-content{
-    margin: 0 16px;
+    margin: 0 16px 56px 16px;
+}
+.headline{
+    margin: 0 8px;
+    background: #fff;
+}
+.headline h2{
+    padding: 0 8px;
+    line-height: 36px;
+}
+.headline h2 span{
+    color: #4285f4;
 }
 .movie{
     width: calc(16.6666% - 16px);
     margin: 8px;
     float: left;
     background: #fff;
+    border-radius: 2px;
 }
 .movie:hover{
     box-shadow: 0 2px 5px rgba(0,0,0,.26);
@@ -416,6 +427,9 @@ input.search-input:focus + input.search-submit{
 .movie-list table tr{
     height: 36px;
     border: 1px solid #d9d9d9;
+}
+.movie-list table tr:hover{
+    background: #e0e0e0;
 }
 .movie-list table tr th,
 .movie-list table tr td{

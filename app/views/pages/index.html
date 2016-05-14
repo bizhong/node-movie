@@ -3,6 +3,13 @@
         <main class="main">
             <section class="movies">
                 <div class="movies-content">
+                {% if page %}
+                <header class="headline">
+                    {% if page == 'search' %}
+                    <h2>共搜索到与 <span>{{ keyword }}</span> 相关的电影有 <span>{{ total }}</span> 个结果。</h2>
+                    {% endif %}
+                </header>
+                {% endif %}
                 {% for movie in movies -%}
                     <article class="movie">
                         <a href="/movie/{{ movie._id.toString() }}"">

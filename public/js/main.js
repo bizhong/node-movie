@@ -44,6 +44,7 @@ function handler() {
             btnBack = getId("btn-back"),
             search = getId("search"),
             searchInput = getId("search-input"),
+            searchSubmit = getId('search-submit'),
             btnSignIn = getId("btn-sign-in"),
             btnSignUp = getId("btn-sign-up");
 
@@ -67,6 +68,7 @@ function handler() {
                 case searchInput:
                     searchInput.blur();
                     header.className = "header";
+                    searchSubmit.style.display = "none";
                     btnBack.style.display = "none";
                     mask.className = "mask-hide";
                     break;
@@ -90,12 +92,14 @@ function handler() {
             case searchInput:
                 searchInput.focus();
                 header.className = "header white";
+                searchSubmit.style.display = "inline-block";
                 btnBack.style.display = "block";
                 mask.className = "mask-hide";
                 break;
             case btnBack:
                 searchInput.blur();
                 header.className = "header";
+                searchSubmit.style.display = "none";
                 btnBack.style.display = "none";
                 break;
             case btnSignIn:

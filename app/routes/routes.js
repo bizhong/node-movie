@@ -1,4 +1,6 @@
 var Index = require('../controllers/index.js');
+var Category = require('../controllers/category.js');
+var Search = require('../controllers/search.js');
 var User = require('../controllers/user.js');
 var Movie = require('../controllers/movie.js');
 var Category = require('../controllers/category.js');
@@ -19,6 +21,12 @@ module.exports = function(app) {
 
     // 详情电影页
     app.get('/movie/:id', Movie.detail);
+
+    // 分类目录
+    // app.get('category', Category.index);
+
+    // 搜索
+    app.get('/search', Search.search);
 
     // 用户
     app.post('/user/signin', User.signin);// 登录

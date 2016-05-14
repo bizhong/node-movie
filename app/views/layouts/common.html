@@ -16,12 +16,12 @@
     <body>
         <header class="header" id="header">
             <a id="btn-nav" href="javascript:void(0);"></a>
-            <h1 class="logo">电影</h1>
+            <h1 class="logo"><a href="/">电影</a></h1>
             <a id="btn-back" href="javascript:void(0);">返回</a>
             <div class="search" id="search">
-                <form action="" method="GET">
-                    <input class="search-input" id="search-input" type="search" placeholder="搜索">
-                    <input class="search-submit" type="submit" >
+                <form action="/search" method="GET">
+                    <input class="search-input" id="search-input" name="search" type="search" value="{{ keyword }}" placeholder="搜索">
+                    <input class="search-submit" id="search-submit" type="submit" >
                 </form>
             </div>
             <div class="btn-sign">
