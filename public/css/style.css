@@ -387,7 +387,7 @@ input.search-submit:hover,
 .comments-content{
     padding: 16px;
 }
-.comments-content p{
+.comments-content form p{
     margin-bottom: 16px;
 }
 .comments-content p span,
@@ -401,7 +401,6 @@ input.search-submit:hover,
 .infro-content p{
     line-height: 24px;
 }
-
 .movie-comments{
     float: left;
     width: 854px;
@@ -455,10 +454,31 @@ input.search-submit:hover,
     margin-bottom: 16px;
 }
 .comments-list li{
-    line-height: 36px;
+    overflow: auto;
+    padding: 8px 0;
     border-bottom: 1px solid #d9d9d9;
 }
-.comments-list li span{
+.comment-author{
+    float: left;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background: #4285f4;
+    border-radius: 50%;
+}
+.comment-body{
+    float: left;
+    margin-left: 24px;
+}
+.comment-body h3{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.comment-body p{
+    line-height: 24px;
     color: #666;
 }
 .local{

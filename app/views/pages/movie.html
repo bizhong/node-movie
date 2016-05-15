@@ -22,9 +22,9 @@
                     <div class="movie-comments">
                         <div class="comments-content">
                             <form action="/user/comment" method="POST">
+                                {% if user %}
                                 <textarea name="comment[content]"></textarea>
                                 <input name="comment[movie]" type="hidden" value="{{ movie._id.toString() }}">
-                                {% if user %}
                                 <input name="comment[from]" type="hidden" value="{{ user.username }}">
                                 <input type="submit" value="评论">
                                 {% else %}
@@ -33,7 +33,12 @@
                             </form>
                             <ul class="comments-list">
                             {% for comment in comments -%}
-                            <li>{{ comment.from }}：<span>{{ comment.content }}</span></li>
+                            <li>
+                                <div class="comment-author">{{ comment.from.charAt(0) }}</div>
+                                <div class="comment-body">
+                                    <h3>{{ comment.from }}</h3>
+                                    <p>{{ comment.content }}</p>
+                                </div>
                             {%- endfor %}
                             </ul>
                         </div>
