@@ -20,7 +20,7 @@ exports.detail = function(req, res) {
             res.render('movie', {
                 title: movie.title + ' - 电影',
                 movie: movie,
-                comments: comments
+                comments: comments.reverse()
             });
         });
     });

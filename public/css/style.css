@@ -387,6 +387,13 @@ input.search-submit:hover,
 .comments-content{
     padding: 16px;
 }
+.comments-content p{
+    margin-bottom: 16px;
+}
+.comments-content p span,
+.infro-content p span{
+    color: #4285f4;
+}
 .infro-content h1{
     font-size: 24px;
     margin-bottom: 16px;
@@ -394,9 +401,7 @@ input.search-submit:hover,
 .infro-content p{
     line-height: 24px;
 }
-.infro-content p span{
-    color: #4285f4;
-}
+
 .movie-comments{
     float: left;
     width: 854px;
