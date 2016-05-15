@@ -4,12 +4,12 @@ Movie（电影）是用 Node.js 和 MongoDB 实现的 Web 应用程序。
 
 ## 概览
 
-- [项目结构](#project-structure)
-- [项目功能](#project-function)
-- [下载演示](#download-demo)
-- [页面展示](#pages-display)
+- [项目结构](#项目结构)
+- [项目功能](#项目功能)
+- [下载演示](#下载演示)
+- [页面展示](#页面展示)
 
-## [项目结构][1]
+## 项目结构
 
 ```
 - movie(项目根目录)
@@ -47,7 +47,7 @@ Movie（电影）是用 Node.js 和 MongoDB 实现的 Web 应用程序。
     |- README.md(项目说明)
 ```
 
-## [项目功能][2]
+## 项目功能
 
 - 游客：浏览首页、电影详情页面、分类目录页面、搜索电影
 
@@ -57,7 +57,7 @@ Movie（电影）是用 Node.js 和 MongoDB 实现的 Web 应用程序。
 
 - 管理员：登录、发布电影、修改电影、删除电影、评论电影
 
-## [下载演示][3]
+## 下载演示
 
 - Download ZIP
 - 解压到当前文件夹
@@ -75,42 +75,38 @@ npm install bcrypt-nodejs body-parser connect-mongo connect-multiparty cookie-pa
 node app
 ```
 
-- 打开浏览器，输入“localhost:3000”
+- 打开浏览器，输入“`localhost:3000`”
 
-## [页面展示][4]
+## 页面展示
 
 - 首页
 
-![首页][5]
+![首页][1]
 
 - 电影详情页面
 
-![电影详情页面][6]
+![电影详情页面][2]
 
 - 分类目录页面
 
-![分类目录页面][7]
+![分类目录页面][3]
 
 - 搜索页面
 
-![搜索页面][8]
+![搜索页面][4]
 
 - 管理员发布电影页面
 
-![管理员发布电影页面][9]
+![管理员发布电影页面][5]
 
 - 电影列表页面
 
-![电影列表页面][10]
+![电影列表页面][6]
 
 
-  [1]: #project-structure
-  [2]: ##project-function
-  [3]: #download-demo
-  [4]: #pages-display
-  [5]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/0.png
-  [6]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/1.png
-  [7]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/2.png
-  [8]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/3.png
-  [9]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/4.png
-  [10]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/5.png
+  [1]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/0.png
+  [2]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/1.png
+  [3]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/2.png
+  [4]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/3.png
+  [5]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/4.png
+  [6]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/5.png
