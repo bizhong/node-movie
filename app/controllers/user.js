@@ -6,13 +6,14 @@ exports.signin = function(req, res) {
     var _user = req.body.user,
         username = _user.username,
         password = _user.password,
-        save = req.param('save');
+        save = req.param('save'),
+        urlpathname = req.param('cur_URL');
     User.findOne({username: username}, function(err, user) {
         if (err) {
             console.log(err);
         }
         if (!user) {
-            return res.redirect('/');
+            return res.redirect(urlpathname);
         }
         user.comparePassword(password, function(err, isMatch) {
             if (err) {
@@ -28,9 +29,9 @@ exports.signin = function(req, res) {
                 // } else {
                 //     console.log("NO");
                 // }
-                return res.redirect('/');
+                return res.redirect(urlpathname);
             } else {
-                return res.redirect('/');
+                return res.redirect(urlpathname);
             }
         });
     });
@@ -40,20 +41,21 @@ exports.signin = function(req, res) {
 exports.signup = function(req, res) {
     var _user = req.body.user,
         username = _user.username,
-        save = req.param('save');
+        save = req.param('save'),
+        urlpathname = req.param('cur_URL');
     User.findOne({username: username}, function(err, user) {
         if (err) {
             console.log(err);
         }
         if (user) {
-            return res.redirect('/');
+            return res.redirect(urlpathname);
         } else {
             user = new User(_user);
             user.save(function(err, user) {
                 if (err) {
                     console.log(err);
                 }
-                res.redirect('/');
+                res.redirect(urlpathname);
             });
         }
     });

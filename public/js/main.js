@@ -46,16 +46,8 @@ function handler() {
             searchInput = getId("search-input"),
             searchSubmit = getId('search-submit'),
             btnSignIn = getId("btn-sign-in"),
-            btnSignUp = getId("btn-sign-up");
-
-        if (!getId("mask")) {
-            var mask = document.createElement("div");
-            mask.id = "mask";
-            mask.className = "mask-hide";
-            body.appendChild(mask);
-        } else {
-            var mask = getId("mask");
-        }
+            btnSignUp = getId("btn-sign-up"),
+            mask = getId("mask");
 
         // 蒙板点击处理函数
         function maskClick() {
@@ -63,7 +55,7 @@ function handler() {
                 case btnNav:
                     menu.className = "menu";
                     mask.className = "mask-hide";
-                    mask.style.cssText = "";
+                    // mask.style.cssText = "";
                     break;
                 case searchInput:
                     searchInput.blur();
@@ -83,11 +75,19 @@ function handler() {
             }
         }
 
+        // 获取当前页面的 URL 的 pathname
+        function getCurURL() {
+            var curUrl = getId("cur-url1") || getId("cur-url2"),
+                urlPN = "";
+            urlPN = window.location.pathname;
+            curUrl.value = urlPN;
+        }
+
         switch(target) {
             case btnNav:
                 menu.className = "menu menu-show";
                 mask.className = "mask-show";
-                mask.style.cssText = "z-index: 2;";
+                // mask.style.cssText = "z-index: 2;";
                 break;
             case searchInput:
                 searchInput.focus();
@@ -105,10 +105,12 @@ function handler() {
             case btnSignIn:
                 signIn.style.display = "block";
                 mask.className = "mask-show";
+                getCurURL();
                 break;
             case btnSignUp:
                 signUp.style.display = "block";
                 mask.className = "mask-show";
+                getCurURL();
                 break;
         }
         addEvent(mask, "click", maskClick);

@@ -574,6 +574,7 @@ input.search-submit:hover,
     transition: background .3s cubic-bezier(.4,0,.2,1);
 }
 .mask-show{
+    z-index: 2;
     visibility: visible;
     background: rgba(0,0,0,.5);
 }

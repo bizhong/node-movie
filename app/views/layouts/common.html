@@ -61,6 +61,7 @@
                     <input name="user[username]" type="text" placeholder="用户名" autofocus>
                     <input name="user[password]" type="password" placeholder="密码">
                     <input name="save" type="checkbox" value="yes" checked>
+                    <input id="cur-url1" name="cur_URL" type="hidden" value="">
                     <label>记住登录状态</label><br/>
                     <input name="reset"type="reset" value="重置">
                     <input name="login" type="submit" value="登录">
@@ -74,6 +75,7 @@
                     <input name="user[username]" type="text" placeholder="用户名" autofocus>
                     <input name="user[password]" type="password" placeholder="密码">
                     <input name="save" type="checkbox" value="yes" checked>
+                    <input id="cur-url2" name="cur_URL" type="hidden" value="">
                     <label>记住登录状态</label><br/>
                     <input name="reset" type="reset" value="重置">
                     <input name="login" type="submit" value="注册">
@@ -81,6 +83,7 @@
             </div>
         </aside>
         {% endif %}
+        <div id="mask" class="mask-hide"></div>
         <script src="/js/main.js"></script>
     </body>
 </html>
