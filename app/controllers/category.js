@@ -14,6 +14,7 @@ exports.index = function(req, res) {
         var total = movies.length;
         res.render('index', {
             title: cname + ' - 电影',
+            pageUrl: req.getUrl(),
             page: 'category',
             category: cname,
             movies: movies,

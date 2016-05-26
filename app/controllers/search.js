@@ -10,6 +10,7 @@ exports.search = function(req, res) {
         }
         res.render('index', {
             title: '电影搜索结果',
+            pageUrl: req.getUrl(),
             page: 'search',
             keyword: keyword,
             movies: movies,

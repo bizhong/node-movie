@@ -4,8 +4,6 @@ var Movie = require('../models/movie.js');
 
 // 首页
 exports.index = function(req, res) {
-    // console.log("Cookies: ", req.cookies);
-
     var catlists = [];
     Category.find({}, function(err, categories) {
         catlists = categories;
@@ -14,6 +12,7 @@ exports.index = function(req, res) {
     Movie.find({}, function(err, movies) {
         res.render('index',{
             title: '电影',
+            pageUrl: req.getUrl(),
             catlists: catlists,
             movies: movies.reverse()
         });

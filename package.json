@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bizhongbio/node-movie.git"
+    "url": "git+https://github.com/basfed/node-movie.git"
   },
   "keywords": [
     "Node.js",
@@ -35,7 +35,7 @@
   "author": "Basfed Lan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bizhongbio/node-movie/issues"
+    "url": "https://github.com/basfed/node-movie/issues"
   },
-  "homepage": "https://github.com/bizhongbio/node-movie#readme"
+  "homepage": "https://github.com/basfed/node-movie#readme"
 }

@@ -55,7 +55,6 @@ function handler() {
                 case btnNav:
                     menu.className = "menu";
                     mask.className = "mask-hide";
-                    // mask.style.cssText = "";
                     break;
                 case searchInput:
                     searchInput.blur();
@@ -87,7 +86,6 @@ function handler() {
             case btnNav:
                 menu.className = "menu menu-show";
                 mask.className = "mask-show";
-                // mask.style.cssText = "z-index: 2;";
                 break;
             case searchInput:
                 searchInput.focus();

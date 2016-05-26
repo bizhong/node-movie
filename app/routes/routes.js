@@ -14,6 +14,11 @@ module.exports = function(app) {
     app.use(function(req, res, next) {
         var _user = req.session.user;
         app.locals.user = _user;// 用户信息放到环境变量中
+
+        // 获取页面完整 URL
+        req.getUrl = function() {
+            return req.protocol + '://' + req.get('host') + req.originalUrl;
+        };
         next();
     });
 

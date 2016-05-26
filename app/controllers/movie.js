@@ -19,6 +19,7 @@ exports.detail = function(req, res) {
         Comment.find({movie: id}, function(err, comments) {
             res.render('movie', {
                 title: movie.title + ' - 电影',
+                pageUrl: req.getUrl(),
                 movie: movie,
                 comments: comments.reverse()
             });
@@ -31,6 +32,7 @@ exports.post = function(req, res) {
     Category.find({}, function(err, categories) {
         res.render('admin', {
             title: '发布电影',
+            pageUrl: req.getUrl(),
             categories: categories,
             movie: {}
         });
@@ -126,6 +128,7 @@ exports.update = function(req, res) {
             Category.find({}, function(err, categories) {
                 res.render('admin', {
                     title: '修改电影',
+                    pageUrl: req.getUrl(),
                     movie: movie,
                     categories: categories
                 });
@@ -142,6 +145,7 @@ exports.list = function(req, res) {
         }
         res.render('movie-list', {
             title: '电影列表',
+            pageUrl: req.getUrl(),
             movies: movies.reverse()
         });
     });
