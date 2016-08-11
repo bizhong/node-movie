@@ -61,14 +61,14 @@
 
 - 克隆（Clone）或者下载（Download）
 
--- 克隆（Clone）
+1 克隆（Clone）
 
 ```
 // 已安装 Node、MongoDB、Git
 git clone https://github.com/basfed/node-movie.git
 ```
 
--- 下载（Download）
+2 下载（Download）
 
 ```
 // 已安装 Node、MongoDB、Git
@@ -80,6 +80,17 @@ git clone https://github.com/basfed/node-movie.git
 ```
 
 - 启动 MongoDB 数据库
+
+```
+// 命令提示符（CMD）
+e:
+cd MongoDB\bin
+mongod.exe --dbpath E:\MongoDB\data\db
+```
+
+运行 bin 目录下用于运行数据库服务器的可执行文件 - mongod.exe
+
+运行 bin 目录下用于运行与数据库服务器相连接的客户端的可执行文件 - mongo.exe
 
 - Git Bash 中运行命令
 
