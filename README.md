@@ -1,12 +1,12 @@
 # node-movie
 
-Movie（电影）是用 Node.js 和 MongoDB 实现的 Web 应用程序。
+电影预告片是一个使用 Node.js 和 MongoDB 开发的 Web 应用程序。
 
 ## 概览
 
 - [项目结构](#项目结构)
 - [项目功能](#项目功能)
-- [下载演示](#下载演示)
+- [本地演示](#本地演示)
 - [页面展示](#页面展示)
 
 ## 项目结构
@@ -57,16 +57,34 @@ Movie（电影）是用 Node.js 和 MongoDB 实现的 Web 应用程序。
 
 - 管理员：登录、发布电影、修改电影、删除电影、评论电影
 
-## 下载演示
+## 本地演示
 
-- Download ZIP
-- 解压到当前文件夹
-- 双击打开“`node-movie-master`”文件夹
-- 右击“`Git Bash Here`”（已安装 Git）
-- Git Bash 中运行命令（已安装 Node）
+- 克隆（Clone）或者下载（Download）
+
+-- 克隆（Clone）
 
 ```
-npm install bcrypt-nodejs body-parser connect-mongo connect-multiparty cookie-parser express express-session fs moment mongoose morgan path serve-static swig underscore --save
+// 已安装 Node、MongoDB、Git
+git clone https://github.com/basfed/node-movie.git
+```
+
+-- 下载（Download）
+
+```
+// 已安装 Node、MongoDB、Git
+1 点击“Clone or download”
+2 选择“Download ZIP”
+3 解压到当前文件夹
+4 双击打开“`node-movie-master`”文件夹
+5 右击“`Git Bash Here`”
+```
+
+- 启动 MongoDB 数据库
+
+- Git Bash 中运行命令
+
+```
+npm install
 ```
 
 - Git Bash 中运行命令
