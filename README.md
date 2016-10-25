@@ -65,7 +65,7 @@
 
 ```
 // 已安装 Node、MongoDB、Git
-git clone https://github.com/basfed/node-movie.git
+git clone https://github.com/bizhong/node-movie.git
 ```
 
 2 下载（Download）
@@ -133,9 +133,9 @@ node app
 ![电影列表页面][6]
 
 
-  [1]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/0.png
-  [2]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/1.png
-  [3]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/2.png
-  [4]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/3.png
-  [5]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/4.png
-  [6]: https://github.com/bizhongbio/node-movie/blob/master/public/images/screenshot/5.png
+  [1]: https://github.com/bizhong/node-movie/blob/master/public/images/screenshot/0.png
+  [2]: https://github.com/bizhong/node-movie/blob/master/public/images/screenshot/1.png
+  [3]: https://github.com/bizhong/node-movie/blob/master/public/images/screenshot/2.png
+  [4]: https://github.com/bizhong/node-movie/blob/master/public/images/screenshot/3.png
+  [5]: https://github.com/bizhong/node-movie/blob/master/public/images/screenshot/4.png
+  [6]: https://github.com/bizhong/node-movie/blob/master/public/images/screenshot/5.png
