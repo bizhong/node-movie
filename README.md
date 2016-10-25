@@ -75,8 +75,8 @@ git clone https://github.com/bizhong/node-movie.git
 1 点击“Clone or download”
 2 选择“Download ZIP”
 3 解压到当前文件夹
-4 双击打开“`node-movie-master`”文件夹
-5 右击“`Git Bash Here`”
+4 双击打开“node-movie-master”文件夹
+5 右击“Git Bash Here”
 ```
 
 - 启动 MongoDB 数据库
