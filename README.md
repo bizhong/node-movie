@@ -1,6 +1,6 @@
-# node-movie
+# 电影预告片
 
-电影预告片是一个使用 Node.js 和 MongoDB 开发的 Web 应用程序。
+电影预告片（Movie Trailers）是一个使用 Node.js 和 MongoDB 开发的 Web 应用程序。
 
 ## 概览
 
@@ -59,52 +59,54 @@
 
 ## 本地演示
 
+在安装 `Node.js`、`MongoDB` 和 `Git` 的前提下，按照以下步骤：
+
 - 克隆（Clone）或者下载（Download）
 
-1 克隆（Clone）
+**克隆（Clone）**
 
-```
-// 已安装 Node、MongoDB、Git
+```git
 git clone https://github.com/bizhong/node-movie.git
 ```
 
-2 下载（Download）
+**下载（Download）**
 
-```
-// 已安装 Node、MongoDB、Git
-1 点击“Clone or download”
-2 选择“Download ZIP”
-3 解压到当前文件夹
-4 双击打开“node-movie-master”文件夹
-5 右击“Git Bash Here”
-```
+> - 点击“Clone or download”
+> - 选择“Download ZIP”
+> - 解压到当前文件夹
+> - 双击打开“node-movie-master”文件夹
+> - 右击“Git Bash Here”
 
 - 启动 MongoDB 数据库
 
-```
-// 命令提示符（CMD）
+打开命令提示符（CMD）：快捷键 `Window + R`，输入 `cmd`，按 `enter`。
+
+```cmd
+// 我的 MongoDB 安装在 E 盘，请根据自己所安装的目录调整命令
 e:
 cd MongoDB\bin
 mongod.exe --dbpath E:\MongoDB\data\db
 ```
 
-运行 bin 目录下用于运行数据库服务器的可执行文件 - mongod.exe
+- 运行 `bin` 目录下用于运行数据库服务器的可执行文件：`mongod.exe`
 
-运行 bin 目录下用于运行与数据库服务器相连接的客户端的可执行文件 - mongo.exe
+- 运行 `bin` 目录下用于运行与数据库服务器相连接的客户端的可执行文件：`mongo.exe`
 
-- Git Bash 中运行命令
+- 安装依赖模块
 
-```
+```git
 npm install
 ```
 
-- Git Bash 中运行命令
+- 执行 `app.js` 脚本
 
-```
+```git
 node app
 ```
 
-- 打开浏览器，输入“`localhost:3000`”
+- 演示（浏览器：Chrome、Firefox、IE 10+ 等）
+
+地址栏输入：`localhost:3000`
 
 ## 页面展示
 
@@ -132,10 +134,9 @@ node app
 
 ![电影列表页面][6]
 
-
-  [1]: https://github.com/bizhong/node-movie/blob/master/public/images/screenshot/0.png
-  [2]: https://github.com/bizhong/node-movie/blob/master/public/images/screenshot/1.png
-  [3]: https://github.com/bizhong/node-movie/blob/master/public/images/screenshot/2.png
-  [4]: https://github.com/bizhong/node-movie/blob/master/public/images/screenshot/3.png
-  [5]: https://github.com/bizhong/node-movie/blob/master/public/images/screenshot/4.png
-  [6]: https://github.com/bizhong/node-movie/blob/master/public/images/screenshot/5.png
+  [1]: https://github.com/bizhong/images/blob/master/node-movie/index.png
+  [2]: https://github.com/bizhong/images/blob/master/node-movie/movie.png
+  [3]: https://github.com/bizhong/images/blob/master/node-movie/category.png
+  [4]: https://github.com/bizhong/images/blob/master/node-movie/search.png
+  [5]: https://github.com/bizhong/images/blob/master/node-movie/movie-post.png
+  [6]: https://github.com/bizhong/images/blob/master/node-movie/movie-list.png
